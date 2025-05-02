@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import User from "./assets/User";
 import Student from "./assets/Student";
 import Fan from "./assets/Fan";
@@ -9,16 +9,21 @@ import Hide from "./assets/Hide";
 import Form from "./assets/Form";
 import If from "./assets/If";
 import Login from "./assets/Login";
+import Use from './assets/Use'
+import Far from './assets/Far'
 // import {useState} from "react";
 function App() {
- const[data, setData]= useState(null);  
- const[print, setPrint]= useState(false);
-   function getData(val){
-    console.log (val.target.value);
-    setData(val.target.value);
-    setPrint(false);
-   }    
-
+const [name, setName]=React.useState("abhi")
+//  const[data, setData]= useState(null);  
+//  const[print, setPrint]= useState(false);
+//    function getData(val){
+//     console.log (val.target.value);
+//     setData(val.target.value);
+//     setPrint(false);
+//    }    
+  function getData(){
+    alert("hello abhishek kya hal chal")
+  }
 
   // const[contact, setContact]= useState(7047160000);
   // const[name, setName]= useState("jaya");
@@ -54,15 +59,15 @@ function App() {
     {/* <Fan name="anil" email="anil@gmail.com"/> */}
 
 
-    <div>
+    {/* <div>
       <h1>gwt input box value !</h1>
       {
         print? 
         <h1>{data}</h1>:null
       }
       <input type="text" onChange={getData} />
-       <button onClick={()=>setPrint(true)}>Print data </button>
-    </div>
+       <button onClick={()=>setPrint(true)}>Print data </button> */}
+    {/* </div> */}
 
    <Input/>
     <INPT/>
@@ -70,6 +75,11 @@ function App() {
     <Form/>
     <If/>
     <Login/>
+    <Use data={getData}/>
+    <div>
+      <Far name={name}/>
+      <button onClick={()=>setName("jaya")}> clicl here </button>
+      </div>
   </>
   );
 }
